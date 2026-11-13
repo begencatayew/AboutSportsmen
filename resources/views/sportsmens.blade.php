@@ -26,11 +26,11 @@
                     {{ $sportsman->name }} {{ $sportsman->surname }}
                 </div>
 
-                <div class="text-gray-600">
+                <div class="text-gray-400">
                     Age: {{ $sportsman->age }}
                 </div>
 
-                <div class="mt-3 text-black">
+                <div class="mt-3 text-lime-600">
                    Biography: {{ $sportsman->bio }}
                 </div>
 

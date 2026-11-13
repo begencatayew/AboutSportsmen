@@ -39,12 +39,18 @@ body {
 
 .auth-panel {
     width: min(100%, 32rem);
-    background: rgba(255, 255, 255, 0.76);
-    border: 1px solid rgba(255, 255, 255, 0.94);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.46) 48%, rgba(255, 255, 255, 0.64)),
+        rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.98);
     border-radius: 1.5rem;
-    backdrop-filter: blur(24px) saturate(145%);
-    -webkit-backdrop-filter: blur(24px) saturate(145%);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3),
+        0 0 48px rgba(56, 189, 248, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.4);
     padding: 2rem;
     position: relative;
     overflow: hidden;
@@ -55,12 +61,103 @@ body {
     position: absolute;
     inset: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.12) 48%, transparent 76%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.2) 32%, transparent 68%);
     pointer-events: none;
 }
 
 .auth-small-panel {
     width: min(100%, 28rem);
+}
+
+.auth-panel:has(form[action="/login"]),
+.auth-panel:has(form[action="/register"]),
+.auth-panel:has(form[action="/forgot-password"]) {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.2) 32%, rgba(255, 255, 255, 0.06) 58%, rgba(255, 255, 255, 0.3)),
+        rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    box-shadow:
+        0 36px 100px rgba(0, 0, 0, 0.42),
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        0 0 64px rgba(56, 189, 248, 0.22),
+        0 0 88px rgba(163, 230, 53, 0.12),
+        inset 0 2px 0 rgba(255, 255, 255, 0.98),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.auth-panel:has(form[action="/login"])::before,
+.auth-panel:has(form[action="/register"])::before,
+.auth-panel:has(form[action="/forgot-password"])::before {
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.78), transparent 38%),
+        linear-gradient(320deg, rgba(56, 189, 248, 0.1), transparent 40%);
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-header,
+.auth-panel:has(form[action="/forgot-password"]) .auth-field,
+.auth-panel:has(form[action="/forgot-password"]) .auth-footer {
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    border-radius: 1.1rem;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.16) 58%, rgba(255, 255, 255, 0.3)),
+        rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(22px) saturate(175%);
+    -webkit-backdrop-filter: blur(22px) saturate(175%);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-header {
+    padding: 1.25rem 1rem;
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-field {
+    padding: 1rem;
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-input {
+    border-color: rgba(255, 255, 255, 0.84);
+    background: rgba(255, 255, 255, 0.42);
+    backdrop-filter: blur(16px) saturate(165%);
+    -webkit-backdrop-filter: blur(16px) saturate(165%);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-input:focus {
+    border-color: rgba(132, 204, 22, 0.72);
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.15), 0 10px 24px rgba(15, 23, 42, 0.12), inset 0 1px 0 #fff;
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-badge {
+    background: rgba(163, 230, 53, 0.2);
+    border-color: rgba(132, 204, 22, 0.48);
+    box-shadow: 0 6px 18px rgba(132, 204, 22, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-status,
+.auth-panel:has(form[action="/forgot-password"]) .auth-error {
+    border-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-button {
+    border-color: rgba(255, 255, 255, 0.92);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.56)),
+        rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(18px) saturate(170%);
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16), inset 0 1px 0 #fff;
+}
+
+.auth-panel:has(form[action="/forgot-password"]) .auth-footer {
+    padding: 0.9rem 1rem;
 }
 
 .auth-header,
@@ -329,4 +426,50 @@ body {
     .auth-header h1 {
         font-size: 1.8rem;
     }
+}
+
+:is(
+    [class~="rounded-3xl"][class~="bg-slate-900/65"],
+    [class~="rounded-3xl"][class~="bg-slate-900/70"],
+    [class~="rounded-3xl"][class~="bg-slate-900/75"]
+) {
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035) 48%, rgba(15, 23, 42, 0.34)),
+        rgba(15, 23, 42, 0.46) !important;
+    border-color: rgba(226, 232, 240, 0.23) !important;
+    backdrop-filter: blur(28px) saturate(165%);
+    -webkit-backdrop-filter: blur(28px) saturate(165%);
+    box-shadow: 0 24px 60px rgba(2, 8, 23, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+:is(
+    [class~="rounded-2xl"][class~="bg-slate-950/50"],
+    [class~="rounded-2xl"][class~="bg-slate-950/80"]
+) {
+    background: rgba(15, 23, 42, 0.48) !important;
+    border-color: rgba(226, 232, 240, 0.16) !important;
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+:is(
+    [class~="rounded-2xl"][class~="bg-lime-800"][class~="shadow-xl"],
+    [class~="rounded-lg"][class~="bg-slate-700"][class~="shadow-xl"]
+) {
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.035) 52%, rgba(15, 23, 42, 0.3)),
+        rgba(15, 23, 42, 0.48) !important;
+    border: 1px solid rgba(226, 232, 240, 0.22);
+    backdrop-filter: blur(22px) saturate(155%);
+    -webkit-backdrop-filter: blur(22px) saturate(155%);
+    box-shadow: 0 20px 48px rgba(2, 8, 23, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+:is(input, select, textarea)[class~="bg-slate-950"],
+:is(input, select, textarea)[class~="bg-slate-900"] {
+    background-color: rgba(15, 23, 42, 0.56) !important;
+    border-color: rgba(203, 213, 225, 0.24) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
