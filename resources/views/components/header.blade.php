@@ -18,7 +18,7 @@
 
         @auth
             <div class="text-base font-semibold sm:text-xl">
-                <a href="{{ route('dashboard') }}" class="text-lime-400 hover:text-slate-100 transition-colors duration-400">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="text-lime-400 hover:text-slate-100 transition-colors duration-400">Categories</a>
             </div>
 
             <form method="POST" action="{{ route('logout') }}">
